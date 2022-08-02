@@ -50,11 +50,7 @@ with open(args.yaml_path) as f:
         data['default']['version'] = args.version
 
     if args.suffix:
-        if args.suffix == 'NO_VALUE':
-            data['default']['suffix'] = ''
-        else:
-            data['default']['suffix'] = args.suffix
-
+        data['default']['suffix'] = '' if args.suffix == 'NO_VALUE' else args.suffix
     if args.revision:
         data['default']['revision'] = args.revision
 
